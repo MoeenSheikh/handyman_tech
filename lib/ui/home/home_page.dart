@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:handyman_tech/components/component_sized_box.dart';
 import 'package:handyman_tech/components/component_text_widgets.dart';
+import 'package:handyman_tech/ui/home/profile_page.dart';
+import 'package:handyman_tech/ui/home/tabbar_screen.dart';
 class HomePage extends StatefulWidget {
   const HomePage({Key key}) : super(key: key);
 
@@ -20,6 +22,9 @@ class _HomePageState extends State<HomePage> {
 
         actions: [
           IconButton(onPressed: (){
+            Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProfilePage()));
 
           },
               icon: Icon(Icons.person_rounded,size: 30,color: Colors.black,))
