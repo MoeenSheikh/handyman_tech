@@ -25,33 +25,65 @@ class _SignInScreenState extends State<SignInScreen> {
         backgroundColor: Colors.white,
       ),
       body:
-      Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.fromLTRB(100, 50, 100, 80),
-            child: Text(
-              "Sign In",
-              style: TextStyle(
-                  color: Colors.red,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 30
+      SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.fromLTRB(100, 50, 100, 80),
+              child: Text(
+                "Sign In",
+                style: TextStyle(
+                    color: Colors.red,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 30
+                ),
               ),
             ),
-          ),
-          Form(
-            key: formKey,
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 1, 20, 1),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.grey[300],
-                        borderRadius: BorderRadius.circular(30),
+            Form(
+              key: formKey,
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 1, 20, 1),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.grey[300],
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(15, 8, 8, 8),
+                          child: TextFormField(
+                              onChanged: (value){
+
+                              },
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  return 'Please enter some text';
+                                }
+                                return null;
+                              },
+
+                              decoration: const InputDecoration(
+                                hintText: 'Phone Number',
+                                border: InputBorder.none,
+                              ),
+
+                          ),
+                        ),
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.fromLTRB(15, 8, 8, 8),
-                        child: TextFormField(
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 20, 20, 1),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.grey[300],
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(15, 8, 8, 8),
+                          child: TextFormField(
+                            obscureText: !passwordVisible,
+
                             onChanged: (value){
 
                             },
@@ -62,98 +94,68 @@ class _SignInScreenState extends State<SignInScreen> {
                               return null;
                             },
 
-                            decoration: const InputDecoration(
-                              hintText: 'Phone Number',
+                            decoration: InputDecoration(
+                              hintText: 'Password',
                               border: InputBorder.none,
-                            ),
-
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 20, 20, 1),
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.grey[300],
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.fromLTRB(15, 8, 8, 8),
-                        child: TextFormField(
-                          obscureText: !passwordVisible,
-
-                          onChanged: (value){
-
-                          },
-                          validator: (value) {
-                            if (value == null || value.isEmpty) {
-                              return 'Please enter some text';
-                            }
-                            return null;
-                          },
-
-                          decoration: InputDecoration(
-                            hintText: 'Password',
-                            border: InputBorder.none,
-                            suffixIcon: IconButton(
-                              icon: Icon(
-                                // Based on passwordVisible state choose the icon
-                                passwordVisible
-                                    ? Icons.visibility
-                                    : Icons.visibility_off,
-                                color: Colors.black,
+                              suffixIcon: IconButton(
+                                icon: Icon(
+                                  // Based on passwordVisible state choose the icon
+                                  passwordVisible
+                                      ? Icons.visibility
+                                      : Icons.visibility_off,
+                                  color: Colors.black,
+                                ),
+                                onPressed: () {
+                                  // Update the state i.e. toogle the state of passwordVisible variable
+                                  setState(() {
+                                    passwordVisible = !passwordVisible;
+                                  });
+                                },
                               ),
-                              onPressed: () {
-                                // Update the state i.e. toogle the state of passwordVisible variable
-                                setState(() {
-                                  passwordVisible = !passwordVisible;
-                                });
-                              },
-                            ),
-                            ),
-
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(20, 60, 20, 1),
-                    child: InkWell(
-                      onTap: (){
-                        Navigator.pushAndRemoveUntil(
-                            context,
-                            MaterialPageRoute(builder: (context) => TabBarScreen()),
-                                (route) => false);
-                      },
-                      child: Container(
-                        height: 60,
-                        width: 200,
-                        decoration: BoxDecoration(
-                          color: Colors.red,
-                          borderRadius: BorderRadius.circular(16),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.fromLTRB(15, 8, 8, 8),
-                          child: Center(
-                            child: Text(
-                              "Sign In",
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20
                               ),
-                            ),
-                          )
+
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
-              )
-          )
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 60, 20, 1),
+                      child: InkWell(
+                        onTap: (){
+                          Navigator.pushAndRemoveUntil(
+                              context,
+                              MaterialPageRoute(builder: (context) => TabBarScreen()),
+                                  (route) => false);
+                        },
+                        child: Container(
+                          height: 60,
+                          width: 200,
+                          decoration: BoxDecoration(
+                            color: Colors.red,
+                            borderRadius: BorderRadius.circular(16),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.fromLTRB(15, 8, 8, 8),
+                            child: Center(
+                              child: Text(
+                                "Sign In",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20
+                                ),
+                              ),
+                            )
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                )
+            )
 
 
-        ],
+          ],
+        ),
       ),
 
     );
