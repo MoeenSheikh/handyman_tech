@@ -90,7 +90,7 @@ class _HomePageState extends State<HomePage> {
                   child: InkWell(
                     child: Container(
                       height: 50,
-                      width: 150,
+                      width: 145,
                       decoration: BoxDecoration(
                         color: (offline)?Colors.grey[300]:Colors.blue,
                         borderRadius: BorderRadius.circular(10),

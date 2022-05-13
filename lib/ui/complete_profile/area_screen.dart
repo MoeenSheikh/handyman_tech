@@ -3,6 +3,7 @@ import 'package:handyman_tech/components/component_sized_box.dart';
 import 'package:handyman_tech/components/component_text_widgets.dart';
 import 'package:handyman_tech/ui/complete_profile/select_service_screen.dart';
 class AreaScreen extends StatefulWidget {
+
   const AreaScreen({Key key}) : super(key: key);
 
   @override

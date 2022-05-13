@@ -43,43 +43,45 @@ class _ProfilePageState extends State<ProfilePage> {
               SizedBox(height: 10,),
               Padding(
                 padding: const EdgeInsets.fromLTRB(10,15,10,4),
-                child:  Row(
-                    children: [
-                      Container(
+                child:  Center(
+                  child: Row(
+                      children: [
+                        Container(
 
-                        height: 50,
-                        width: 187,
-                        decoration: BoxDecoration(
-                            color: Colors.red,
-                            borderRadius: BorderRadius.circular(10)
-                        ),
+                          height: 50,
+                          width: 160,
+                          decoration: BoxDecoration(
+                              color: Colors.red,
+                              borderRadius: BorderRadius.circular(10)
+                          ),
 
-                        child: Center(
-                          child: Text("Wallet 0 Rs",style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18
-                          ),),
+                          child: Center(
+                            child: Text("Wallet 0 Rs",style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18
+                            ),),
+                          ),
                         ),
-                      ),
-                      SizedBox(width: 10,),
-                      Container(
+                        SizedBox(width: 10,),
+                        Container(
 
-                        height: 50,
-                        width: 187,
+                          height: 50,
+                          width: 160,
 
-                        decoration: BoxDecoration(
-                            color: Colors.red,
-                            borderRadius: BorderRadius.circular(10)
+                          decoration: BoxDecoration(
+                              color: Colors.red,
+                              borderRadius: BorderRadius.circular(10)
+                          ),
+                          child: Center(
+                            child: Text("Bonus 0 Rs",style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18
+                            ),),
+                          ),
                         ),
-                        child: Center(
-                          child: Text("Bonus 0 Rs",style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18
-                          ),),
-                        ),
-                      ),
-                    ],
-                  ),
+                      ],
+                    ),
+                ),
               ),
               SizedBox(height: 15,),
               Padding(

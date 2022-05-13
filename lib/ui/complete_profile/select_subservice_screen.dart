@@ -5,7 +5,9 @@ import 'package:handyman_tech/components/component_text_widgets.dart';
 import 'package:handyman_tech/ui/home/home_page.dart';
 import 'package:handyman_tech/ui/home/tabbar_screen.dart';
 class SelectSubServiceScreen extends StatefulWidget {
-  const SelectSubServiceScreen({Key key}) : super(key: key);
+  final String area;
+  final String serviceName;
+  const SelectSubServiceScreen({this.area,this.serviceName,Key key}) : super(key: key);
 
   @override
   _SelectSubServiceScreenState createState() => _SelectSubServiceScreenState();

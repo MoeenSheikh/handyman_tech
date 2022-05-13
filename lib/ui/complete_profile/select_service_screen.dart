@@ -3,7 +3,8 @@ import 'package:handyman_tech/components/component_sized_box.dart';
 import 'package:handyman_tech/components/component_text_widgets.dart';
 import 'package:handyman_tech/ui/complete_profile/select_subservice_screen.dart';
 class SelectServiceScreen extends StatefulWidget {
-  const SelectServiceScreen({Key key}) : super(key: key);
+  final String area;
+  const SelectServiceScreen({this.area,Key key}) : super(key: key);
 
   @override
   _SelectServiceScreenState createState() => _SelectServiceScreenState();
